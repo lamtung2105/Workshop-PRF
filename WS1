@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	double a,b,c,x;
+	double S1,S2,p;
+	
+	
+	
+
+    printf("Enter a: ");
+    scanf("%lf",&a);
+     printf("Enter b: ");
+    scanf("%lf",&b);
+     printf("Enter c: ");
+    scanf("%lf",&c);
+     printf("Enter x: ");
+    scanf("%lf",&x);
+double delta = b*b - 4 * a * c;
+	S1 = a* x * x + b*x + c;
+	
+	printf("S1 = %.2lf, ",S1);
+	
+	
+	if(delta>0)
+	{
+		S2 = sqrt(delta);
+		printf("S2 = %.2lf",S2);
+		}else{
+		printf("S2 = 0");
+}
+		printf("\nEnter a, b, c = ",a,b,c);
+    scanf("%lf%lf%lf",&a,&b,&c);
+
+	double perimeter = a + b + c;
+		 p = (a+b+c)/2;
+	double area = sqrt(p*(p-a)*(p-b)*(p-c));
+		if(a+b > c && a+c > b && b + c > a)
+		{
+			printf("Perimeter = %.4lf",p);
+			printf("Area = %.4lf",area);
+		}
+		printf("a,b,c are not side of triangle");
+	}
+	
