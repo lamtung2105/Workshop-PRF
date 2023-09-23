@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+
+double myExp(double x, int n) {
+    double result = 1.0;
+    double term = 1.0;
+	int i;
+    for (i = 1; i <= n; i++) {
+        term *= x / i;
+        result += term;
+    }
+
+    return result;
+}
+
+double myEpsi(double x, double epsi) {
+    double result = 1.0;
+    double term = 1.0;
+    int i = 1;
+
+    while (fabs(term) >= epsi) {
+        term *= x / i;
+        result += term;
+        i++;
+    }
+
+    return result;
+}
+
+int main() {
+    system("cls");
+    double x, epsi;
+    int n;
+    x = 1.5;
+    epsi = 0.00001;
+    n = 1000;
+
+    printf("\n");
+    printf(" exp(%.1f) = %f\n", x, exp(x));
+    printf(" exp(%.1f,%d) = %f\n", x, n, myExp(x, n));
+    printf(" exp(%.1f,%f) = %f\n", x, epsi, myEpsi(x, epsi));
+    printf("\n");
+    system("pause");
+    return 0;
+}
